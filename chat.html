@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=5.0">
     <title>ChatCoder - 채팅</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -29,8 +29,8 @@
                 </div>
                 
                 <div class="chat-input-container">
-                    <textarea id="chat-input" placeholder="메시지를 입력하세요... (Shift+Enter로 줄바꿈)" maxlength="500" rows="1"></textarea>
-                    <button id="send-button" type="button">전송</button>
+                    <textarea id="chat-input" placeholder="메시지를 입력하세요... (Shift+Enter로 줄바꿈)" maxlength="500" rows="1" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+                    <button id="send-chat" id="send-button" type="button">전송</button>
                 </div>
             </div>
         </div>

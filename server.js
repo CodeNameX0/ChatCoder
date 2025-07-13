@@ -144,16 +144,6 @@ function saveData(filePath, data) {
 // 서버 시작 시 데이터 로드
 console.log('🚀 서버 시작 - 데이터 로딩 중...');
 
-// 파일 저장 테스트
-console.log('🧪 파일 저장 기능 테스트 시작...');
-try {
-    const testData = [{"test": "저장 테스트", "timestamp": new Date()}];
-    saveData(CHATS_FILE, testData);
-    console.log('✅ 파일 저장 테스트 성공');
-} catch (error) {
-    console.error('❌ 파일 저장 테스트 실패:', error);
-}
-
 // 사용자 데이터를 환경 변수에서 로드
 function loadUsersFromEnv() {
     try {

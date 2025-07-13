@@ -1131,6 +1131,80 @@ body.light-mode .theme-toggle:hover {
     .chat-bubble-content {
         max-width: 85%;
     }
+    
+    /* 모바일에서 채팅 입력창 개선 */
+    #chat-input {
+        font-size: 16px; /* iOS에서 줌 방지 */
+        padding: 12px;
+        min-height: 48px;
+        border-radius: 8px;
+        border: 2px solid var(--border-dark);
+        background: var(--surface-dark);
+        color: var(--text-primary);
+        width: 100%;
+        box-sizing: border-box;
+        -webkit-appearance: none;
+        -webkit-border-radius: 8px;
+    }
+    
+    #chat-input:focus {
+        outline: none;
+        border-color: var(--primary-blue);
+        box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+    }
+    
+    /* 모바일에서 댓글 입력창 개선 */
+    .comment-input {
+        font-size: 16px !important; /* iOS에서 줌 방지 */
+        padding: 12px !important;
+        min-height: 48px !important;
+        border-radius: 8px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        -webkit-appearance: none !important;
+    }
+    
+    /* 모바일에서 텍스트 영역 개선 */
+    textarea {
+        font-size: 16px !important; /* iOS에서 줌 방지 */
+        -webkit-appearance: none !important;
+        resize: vertical !important;
+    }
+    
+    /* 모바일에서 입력 필드 일반 스타일 */
+    input[type="text"], 
+    input[type="password"], 
+    textarea {
+        font-size: 16px !important;
+        -webkit-appearance: none !important;
+        border-radius: 8px !important;
+        padding: 12px !important;
+        min-height: 48px !important;
+    }
+    
+    /* 채팅 메시지 컨테이너 높이 조정 */
+    #chat-messages {
+        max-height: 50vh;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        /* 메시지가 아래부터 쌓이도록 수정 */
+        justify-content: flex-end;
+    }
+    
+    /* 채팅 버튼 모바일 최적화 */
+    #send-chat {
+        min-height: 48px;
+        font-size: 16px;
+        padding: 12px 20px;
+    }
+    
+    /* 댓글 버튼 모바일 최적화 */
+    .comment-submit {
+        min-height: 48px !important;
+        font-size: 16px !important;
+        padding: 12px 20px !important;
+    }
 }
 
 /* 스크롤바 다크 모드 스타일 */

@@ -335,7 +335,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         chatBox.appendChild(messageContainer);
-        chatBox.scrollTop = chatBox.scrollHeight; // 스크롤을 맨 아래로 이동
+        
+        // 스크롤을 맨 아래로 이동 (약간의 지연을 두어 렌더링 완료 후 실행)
+        setTimeout(() => {
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }, 10);
     }
 
     // 사용자별 고유 색상 생성 함수
@@ -395,6 +399,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                     addChatMessage(chat.author, chat.message.trim(), chat.timestamp, isOwn);
                 });
+                
+                // 채팅 박스를 맨 아래로 스크롤
+                setTimeout(() => {
+                    chatBox.scrollTop = chatBox.scrollHeight;
+                }, 100);
                 
                 console.log(`✅ 기존 채팅 ${validChats.length}개 로드 완료`);
             } else {
@@ -970,8 +979,8 @@ document.addEventListener('DOMContentLoaded', () => {
                             ${currentUser ? `
                                 <form class="comment-form" data-doc-id="${doc.id}" style="margin-top: 1rem;">
                                     <div style="display: flex; gap: 0.5rem;">
-                                        <input type="text" placeholder="댓글을 입력하세요..." required style="flex: 1; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px; font-size: 0.85rem;">
-                                        <button type="submit" style="padding: 0.5rem 1rem; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem;">댓글</button>
+                                        <input type="text" class="comment-input" placeholder="댓글을 입력하세요..." required style="flex: 1; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; min-height: 48px; box-sizing: border-box; -webkit-appearance: none; appearance: none;" autocomplete="off" autocorrect="off">
+                                        <button type="submit" class="comment-submit" style="padding: 12px 20px; background: #007bff; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; min-height: 48px;">댓글</button>
                                     </div>
                                 </form>
                             ` : '<p style="color: #888; font-style: italic; font-size: 0.85rem;">댓글을 작성하려면 로그인하세요.</p>'}
