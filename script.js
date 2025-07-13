@@ -979,8 +979,8 @@ document.addEventListener('DOMContentLoaded', () => {
                             ${currentUser ? `
                                 <form class="comment-form" data-doc-id="${doc.id}" style="margin-top: 1rem;">
                                     <div style="display: flex; gap: 0.5rem;">
-                                        <input type="text" class="comment-input" placeholder="댓글을 입력하세요..." required style="flex: 1; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; min-height: 48px; box-sizing: border-box; -webkit-appearance: none; appearance: none;" autocomplete="off" autocorrect="off">
-                                        <button type="submit" class="comment-submit" style="padding: 12px 20px; background: #007bff; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; min-height: 48px;">댓글</button>
+                                        <input type="text" class="comment-input" placeholder="댓글을 입력하세요..." required style="flex: 1; padding: 16px; border: 1px solid #ddd; border-radius: 12px; font-size: 16px; min-height: 60px; box-sizing: border-box; -webkit-appearance: none; appearance: none; line-height: 1.4;" autocomplete="off" autocorrect="off">
+                                        <button type="submit" class="comment-submit" style="padding: 16px 24px; background: #007bff; color: white; border: none; border-radius: 12px; cursor: pointer; font-size: 16px; min-height: 60px; align-self: flex-end;">댓글</button>
                                     </div>
                                 </form>
                             ` : '<p style="color: #888; font-style: italic; font-size: 0.85rem;">댓글을 작성하려면 로그인하세요.</p>'}

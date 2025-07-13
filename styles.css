@@ -1135,33 +1135,42 @@ body.light-mode .theme-toggle:hover {
     /* 모바일에서 채팅 입력창 개선 */
     #chat-input {
         font-size: 16px; /* iOS에서 줌 방지 */
-        padding: 12px;
-        min-height: 48px;
-        border-radius: 8px;
+        padding: 16px;
+        min-height: 60px; /* 높이 증가 */
+        max-height: 120px; /* 최대 높이 설정 */
+        border-radius: 12px;
         border: 2px solid var(--border-dark);
         background: var(--surface-dark);
         color: var(--text-primary);
         width: 100%;
         box-sizing: border-box;
         -webkit-appearance: none;
-        -webkit-border-radius: 8px;
+        -webkit-border-radius: 12px;
+        resize: vertical; /* 세로 리사이즈 허용 */
     }
     
     #chat-input:focus {
         outline: none;
         border-color: var(--primary-blue);
         box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        min-height: 80px; /* 포커스 시 더 높게 */
     }
     
     /* 모바일에서 댓글 입력창 개선 */
     .comment-input {
         font-size: 16px !important; /* iOS에서 줌 방지 */
-        padding: 12px !important;
-        min-height: 48px !important;
-        border-radius: 8px !important;
+        padding: 16px !important;
+        min-height: 60px !important; /* 높이 증가 */
+        max-height: 100px !important; /* 최대 높이 설정 */
+        border-radius: 12px !important;
         width: 100% !important;
         box-sizing: border-box !important;
         -webkit-appearance: none !important;
+        resize: vertical !important; /* 세로 리사이즈 허용 */
+    }
+    
+    .comment-input:focus {
+        min-height: 80px !important; /* 포커스 시 더 높게 */
     }
     
     /* 모바일에서 텍스트 영역 개선 */
@@ -1169,6 +1178,8 @@ body.light-mode .theme-toggle:hover {
         font-size: 16px !important; /* iOS에서 줌 방지 */
         -webkit-appearance: none !important;
         resize: vertical !important;
+        min-height: 60px !important; /* 기본 높이 증가 */
+        line-height: 1.5 !important; /* 줄 간격 개선 */
     }
     
     /* 모바일에서 입력 필드 일반 스타일 */
@@ -1177,9 +1188,10 @@ body.light-mode .theme-toggle:hover {
     textarea {
         font-size: 16px !important;
         -webkit-appearance: none !important;
-        border-radius: 8px !important;
-        padding: 12px !important;
-        min-height: 48px !important;
+        border-radius: 12px !important;
+        padding: 16px !important;
+        min-height: 60px !important; /* 높이 증가 */
+        line-height: 1.4 !important;
     }
     
     /* 채팅 메시지 컨테이너 높이 조정 */
@@ -1193,17 +1205,38 @@ body.light-mode .theme-toggle:hover {
     }
     
     /* 채팅 버튼 모바일 최적화 */
-    #send-chat {
-        min-height: 48px;
+    #send-chat, #send-button {
+        min-height: 60px; /* 입력창과 동일한 높이 */
         font-size: 16px;
-        padding: 12px 20px;
+        padding: 16px 24px;
+        border-radius: 12px;
+        align-self: flex-end; /* 입력창 하단에 맞춤 */
     }
     
     /* 댓글 버튼 모바일 최적화 */
     .comment-submit {
-        min-height: 48px !important;
+        min-height: 60px !important; /* 입력창과 동일한 높이 */
         font-size: 16px !important;
-        padding: 12px 20px !important;
+        padding: 16px 24px !important;
+        border-radius: 12px !important;
+        align-self: flex-end !important; /* 입력창 하단에 맞춤 */
+    }
+    
+    /* 모바일에서 채팅 입력 컨테이너 개선 */
+    .chat-input-container {
+        padding: 16px;
+        gap: 12px;
+        align-items: stretch; /* 버튼과 입력창 높이 맞춤 */
+    }
+    
+    /* 모바일에서 채팅 입력 필드 스타일 개선 */
+    .chat-input-field {
+        min-height: 60px !important;
+        max-height: 120px !important;
+        padding: 16px !important;
+        font-size: 16px !important;
+        border-radius: 12px !important;
+        line-height: 1.4 !important;
     }
 }
 
