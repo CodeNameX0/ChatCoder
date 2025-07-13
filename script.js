@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const chatBox = document.getElementById('chat-box'); // 채팅창
     const chatInput = document.getElementById('chat-input'); // 메시지 입력란
-    const sendButton = document.getElementById('send-button'); // Send 버튼
+    const sendButton = document.getElementById('send-chat'); // Send 버튼 (채팅 페이지용)
 
     // 로그인한 사용자 아이디 가져오기
     let loggedInUser = localStorage.getItem('loggedInUser');

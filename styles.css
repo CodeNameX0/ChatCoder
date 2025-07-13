@@ -1403,3 +1403,26 @@ body.light-mode .password-toggle {
 body.light-mode .password-toggle:hover {
     color: #1e40af;
 }
+
+/* 전송 버튼 기본 스타일 추가 */
+#send-button, #send-chat {
+    background: #4F46E5;
+    color: white;
+    border: none;
+    border-radius: 22px;
+    padding: 0.8rem 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    margin: 0;
+    letter-spacing: -0.1px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Pretendard', sans-serif;
+    box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
+}
+
+#send-button:hover, #send-chat:hover {
+    background: #3730a3;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+}
