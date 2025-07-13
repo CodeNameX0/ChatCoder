@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatCoder - 문서와 채팅의 플랫폼</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="ChatCoder Logo.png" alt="ChatCoder Logo" class="logo">
+            <h1>ChatCoder</h1>
+            <p>문서를 작성하고 채팅을 할 수 있는 플랫폼에 오신 것을 환영합니다!</p>
+        </header>
+        
+        <div id="message-box"></div>
+        
+        <div class="card">
+            <h2>플랫폼 정보</h2>
+            <p><strong>제작자:</strong> CodeNameX0</p>
+            <p><strong>버전:</strong> v 2.1.0 (2025년 6월)</p>
+            <p>ChatCoder는 사용자들이 문서를 공유하고 실시간으로 채팅할 수 있는 협업 플랫폼입니다.</p>
+        </div>
+        
+        <div class="card">
+            <h2>시작하기</h2>
+            <div class="button-grid">
+                <button id="button1" class="btn">📢 채팅하기</button>
+                <button id="button2" class="btn">📝 문서 작성</button>
+                <button id="button3" class="btn btn-accent">🔐 로그인</button>
+                <button id="game" class="btn btn-secondary">🎮 게임 플레이</button>
+            </div>
+        </div>
+        
+        <div id="profile" class="card">
+            <h3>사용자 프로필</h3>
+            <p id="profile-info"></p>
+            <button id="logout-button" class="btn btn-secondary">로그아웃</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

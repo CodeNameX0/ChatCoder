@@ -1,0 +1,28 @@
+{
+    "name": "chatcoder",
+    "version": "2.1.0",
+    "description": "ChatCoder - A dynamic web platform with chat, document, and game features",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js",
+        "dev": "node server.js"
+    },
+    "engines": {
+        "node": ">=16.0.0"
+    },
+    "dependencies": {
+        "bcrypt": "^6.0.0",
+        "body-parser": "^2.2.0",
+        "cors": "^2.8.5",
+        "dotenv": "^16.3.1",
+        "express": "^4.21.2",
+        "express-session": "^1.18.1",
+        "mongodb": "^6.17.0",
+        "mongoose": "^8.16.1",
+        "multer": "^1.4.5-lts.1",
+        "socket.io": "^4.8.1"
+    },
+    "keywords": ["chat", "document", "web", "platform", "korean"],
+    "author": "ChatCoder Team",
+    "license": "MIT"
+}

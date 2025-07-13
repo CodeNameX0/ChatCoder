@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatCoder - 채팅</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="ChatCoder Logo.png" alt="ChatCoder Logo" class="logo">
+            <h1>💬 채팅방</h1>
+        </header>
+        
+        <nav>
+            <a href="index.html">🏠 메인 페이지</a>
+            <a href="document.html">📝 문서 작성</a>
+            <button id="button3" class="btn btn-accent">🔐 로그인</button>
+        </nav>
+        
+        <div class="card">
+            <div class="chat-container">
+                <div class="chat-header">
+                    💬 ChatCoder 채팅방
+                </div>
+                <div id="chat-box" class="chat-messages">
+                    <!-- 채팅 메시지가 여기에 추가됩니다 -->
+                </div>
+                
+                <div class="chat-input-container">
+                    <textarea id="chat-input" placeholder="메시지를 입력하세요... (Shift+Enter로 줄바꿈)" maxlength="500" rows="1"></textarea>
+                    <button id="send-button" type="button">전송</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

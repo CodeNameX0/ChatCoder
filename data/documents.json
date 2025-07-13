@@ -1,0 +1,54 @@
+[
+  {
+    "id": 2,
+    "title": "test",
+    "content": "test",
+    "author": "CodeNameX0(정승유)👑",
+    "comments": [
+      {
+        "author": "CodeNameX0(정승유)👑",
+        "content": "test",
+        "createdAt": "2025-07-13T04:28:53.344Z"
+      }
+    ],
+    "createdAt": "2025-07-06T15:00:08.493Z"
+  },
+  {
+    "id": 3,
+    "title": "사진 올라와집니다",
+    "content": "예",
+    "author": "CodeNameX0(정승유)👑",
+    "comments": [
+      {
+        "author": "CodeNameX0(정승유)👑",
+        "content": "예아",
+        "createdAt": "2025-07-11T14:00:27.988Z"
+      }
+    ],
+    "attachedFiles": [
+      {
+        "originalName": "Jjang.gif",
+        "filename": "1752155831162-104255317-Jjang.gif",
+        "size": 317693,
+        "mimetype": "image/gif",
+        "path": "/uploads/1752155831162-104255317-Jjang.gif"
+      }
+    ],
+    "createdAt": "2025-07-10T13:57:11.198Z"
+  },
+  {
+    "id": 4,
+    "title": "챗코더가 완성되었습니다!",
+    "content": "ㅊㅊㅊ",
+    "author": "CodeNameX0(정승유)👑",
+    "comments": [
+      {
+        "author": "CodeNameX0(정승유)👑",
+        "content": "ㅎㅎ",
+        "createdAt": "2025-07-13T11:26:02.529Z"
+      }
+    ],
+    "attachedFiles": [],
+    "createdAt": "2025-07-13T04:56:17.465Z"
+  }
+]

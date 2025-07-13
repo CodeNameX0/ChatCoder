@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatCoder - 문서 작성</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="ChatCoder Logo.png" alt="ChatCoder Logo" class="logo">
+            <h1>문서 작성</h1>
+        </header>
+        
+        <nav>
+            <a href="index.html">🏠 메인 페이지</a>
+            <a href="chat.html">💬 채팅하기</a>
+            <button id="button3" class="btn btn-accent">🔐 로그인</button>
+        </nav>
+        
+        <div id="login-warning" class="error-message">
+            로그인 후 문서를 작성할 수 있습니다.
+        </div>
+        
+
+        
+        <div class="card">
+            <form id="document-form">
+                <h2>새 문서 작성</h2>
+                <div class="form-group">
+                    <label for="doc-title">문서 제목:</label>
+                    <input type="text" id="doc-title" name="doc-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="doc-content">문서 내용:</label>
+                    <textarea id="doc-content" name="doc-content" rows="10" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="doc-files">파일 첨부 (선택사항):</label>
+                    <input type="file" id="doc-files" name="doc-files" multiple accept=".jpg,.jpeg,.png,.gif,.pdf,.doc,.docx,.txt">
+                    <small class="file-help-text">이미지, PDF, 문서 파일을 첨부할 수 있습니다.</small>
+                </div>
+                <button type="submit" class="btn btn-accent">📝 문서 저장</button>
+            </form>
+        </div>
+        
+        <div id="document-message"></div>
+
+        <div class="card">
+            <h2>📚 저장된 문서</h2>
+            <div id="saved-documents">
+                <!-- 저장된 문서가 여기에 추가됩니다 -->
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
