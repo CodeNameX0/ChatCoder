@@ -312,9 +312,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isOwn) {
             // 내 메시지 (오른쪽, 카카오톡 스타일)
             messageContainer.innerHTML = `
-                <div class="chat-time">${messageTime}</div>
-                <div class="chat-bubble">
-                    ${formattedMessage}
+                <div class="chat-bubble-container">
+                    <div class="chat-time">${messageTime}</div>
+                    <div class="chat-bubble">
+                        <div class="chat-bubble-content">${formattedMessage}</div>
+                    </div>
                 </div>
             `;
         } else {
@@ -325,9 +327,9 @@ document.addEventListener('DOMContentLoaded', () => {
             
             messageContainer.innerHTML = `
                 <div class="${nicknameClass}" ${nicknameStyle} data-username="${author}">${author}</div>
-                <div style="display: flex; align-items: flex-end;">
+                <div class="chat-bubble-container">
                     <div class="chat-bubble">
-                        ${formattedMessage}
+                        <div class="chat-bubble-content">${formattedMessage}</div>
                     </div>
                     <div class="chat-time">${messageTime}</div>
                 </div>
