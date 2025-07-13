@@ -16,8 +16,8 @@
     --error-dark: #f43f5e;          /* 에러 색상 (로즈) */
     --warning-dark: #f59e0b;        /* 경고 색상 */
     --chat-bg: hsl(215, 79%, 74%);  /* 채팅 배경 (하늘) */
-    --my-bubble: #FFB347;          /* 내 말풍선 (연주황색) */
-    --other-bubble: #ffffff;       /* 상대방 말풍선 */
+    --my-bubble: #fffacd;          /* 내 말풍선 (연노란색) */
+    --other-bubble: #ffffff;       /* 상대방 말풍선 (흰색) */
     --background-gradient: linear-gradient(135deg, #0f0f23 0%, #1e1b4b 50%, #312e81 100%);
     --shadow-dark: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
     --shadow-lg-dark: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
@@ -41,7 +41,7 @@ body.light-mode {
     --error-dark: #b91c1c;          /* 진한 에러 색상 */
     --warning-dark: #b45309;        /* 진한 경고 색상 */
     --chat-bg: #f8fafc;             /* 매우 연한 회색 채팅 배경 */
-    --my-bubble: #1e40af;          /* 진한 파란색 내 말풍선 */
+    --my-bubble: #fffacd;          /* 연노란색 내 말풍선 */
     --other-bubble: #ffffff;       /* 흰색 상대방 말풍선 */
     --background-gradient: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%);
     --shadow-dark: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.15);
@@ -115,9 +115,9 @@ body.light-mode .chat-bubble {
 }
 
 body.light-mode .chat-message.current-user .chat-bubble {
-    background: #1e40af;
-    color: #ffffff;
-    border: 2px solid #1d4ed8;
+    background: #fffacd;
+    color: #000000;
+    border: 2px solid #f0e68c;
     font-weight: 500;
 }
 
@@ -429,6 +429,32 @@ input::placeholder, textarea::placeholder {
     color: var(--primary-blue);
     transform: translateY(-50%) scale(1.1);
     box-shadow: none;
+}
+
+/* 모바일에서 비밀번호 토글 버튼 개선 */
+@media (max-width: 768px) {
+    .password-toggle {
+        font-size: 16px; /* 더 작게 */
+        right: 8px;
+        padding: 2px;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .password-toggle:hover {
+        transform: translateY(-50%) scale(1.05); /* 호버 효과도 더 작게 */
+    }
+    
+    .password-container {
+        position: relative;
+    }
+    
+    .password-container input {
+        padding-right: 35px; /* 버튼 공간 확보 */
+    }
 }
 
 /* 네비게이션 스타일 */
@@ -1021,6 +1047,44 @@ nav a:hover {
     }
 }
 
+/* 테마 토글 버튼 - 왼쪽 상단에 작게 */
+.theme-toggle {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1000;
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-dark);
+    min-width: 60px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Pretendard', sans-serif;
+}
+
+.theme-toggle:hover {
+    background: var(--hover-blue);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-lg-dark);
+}
+
+/* 모바일에서 테마 토글 버튼 더 작게 */
+@media (max-width: 768px) {
+    .theme-toggle {
+        top: 10px;
+        left: 10px;
+        padding: 4px 8px;
+        font-size: 11px;
+        min-width: 50px;
+        border-radius: 15px;
+    }
+}
+
 /* 스크롤바 다크 모드 스타일 */
 ::-webkit-scrollbar {
     width: 8px;
@@ -1425,4 +1489,40 @@ body.light-mode .password-toggle:hover {
     background: #3730a3;
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+}
+
+/* 모바일에서 네비게이션 바 정렬 개선 */
+@media (max-width: 768px) {
+    nav {
+        padding: 0.8rem 0.5rem;
+        margin-bottom: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    nav a,
+    nav button {
+        margin: 0;
+        padding: 8px 12px;
+        font-size: 14px;
+        border-radius: 6px;
+        flex: 0 0 auto;
+        min-width: fit-content;
+        white-space: nowrap;
+    }
+    
+    /* 로그인 버튼 특별 스타일 */
+    nav .btn {
+        background: var(--accent-yellow);
+        color: var(--background-dark);
+        border: none;
+        font-weight: 600;
+    }
+    
+    nav .btn:hover {
+        background: var(--warning-dark);
+    }
 }
