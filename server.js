@@ -154,9 +154,22 @@ try {
     console.error('❌ 파일 저장 테스트 실패:', error);
 }
 
-// 사용자 데이터 (하드코딩)
+// 사용자 데이터를 환경 변수에서 로드
 function loadUsersFromEnv() {
-    // 실제 사용자 데이터
+    try {
+        // 환경 변수에서 사용자 데이터 로드
+        const usersData = process.env.USERS_DATA;
+        if (usersData) {
+            // Base64 디코딩 후 JSON 파싱
+            const decodedData = Buffer.from(usersData, 'base64').toString('utf8');
+            return JSON.parse(decodedData);
+        }
+    } catch (error) {
+        console.error('❌ 환경 변수에서 사용자 데이터 로드 실패:', error);
+    }
+    
+    // 기본 사용자 데이터 (개발 환경용)
+    console.warn('⚠️ 환경 변수를 찾을 수 없어 기본 사용자 데이터를 사용합니다.');
     return [
         {"username": "CodeNameX0(정승유)👑", "password": "Qwerty11"},
         {"username": "seomin(서정민)", "password": "QI198B"},
@@ -166,7 +179,8 @@ function loadUsersFromEnv() {
         {"username": "Ohw-chessuser(김태윤)", "password": "SHNLL7"},
         {"username": "Choi_Nick_chopstick(최시윤)", "password": "ZFO3HY"},
         {"username": "SupepGood(이시완)", "password": "D6WPTR"},
-        {"username": "Nok-wodu-okro(김승욱)", "password": "ORD436"}
+        {"username": "Nok-wodu-okro(김승욱)", "password": "ORD436"},
+        {"username": "andy0823(고동현)", "password": "W3IAW9"}
     ];
 }
 
