@@ -154,30 +154,28 @@ try {
     console.error('❌ 파일 저장 테스트 실패:', error);
 }
 
-// 사용자 데이터를 환경 변수에서 로드
+// 사용자 데이터 (하드코딩)
 function loadUsersFromEnv() {
-    try {
-        // 환경 변수에서 사용자 데이터 로드
-        const usersData = process.env.USERS_DATA;
-        if (usersData) {
-            // Base64 디코딩 후 JSON 파싱
-            const decodedData = Buffer.from(usersData, 'base64').toString('utf8');
-            return JSON.parse(decodedData);
-        }
-    } catch (error) {
-        console.error('❌ 환경 변수에서 사용자 데이터 로드 실패:', error);
-    }
-    
-    // 기본 사용자 데이터 (개발 환경용)
-    console.warn('⚠️ 환경 변수를 찾을 수 없어 기본 사용자 데이터를 사용합니다.');
+    // 실제 사용자 데이터
     return [
-        {"username": "admin", "password": "admin123"},
-        {"username": "test", "password": "test123"}
+        {"username": "CodeNameX0(정승유)👑", "password": "Qwerty11"},
+        {"username": "seomin(서정민)", "password": "QI198B"},
+        {"username": "bbangbrothers(윤겸)", "password": "Y3ODGK"},
+        {"username": "Joo(주한민)", "password": "FZUQM4"},
+        {"username": "Lee_Noel(전태현)", "password": "LZQAX1"},
+        {"username": "Ohw-chessuser(김태윤)", "password": "SHNLL7"},
+        {"username": "Choi_Nick_chopstick(최시윤)", "password": "ZFO3HY"},
+        {"username": "SupepGood(이시완)", "password": "D6WPTR"},
+        {"username": "Nok-wodu-okro(김승욱)", "password": "ORD436"}
     ];
 }
 
 const users = loadUsersFromEnv();
 console.log(`👥 로딩된 사용자 수: ${users.length}`);
+console.log(`🔐 사용자 데이터 (비밀번호 마스킹):`, users.map(u => ({
+    username: u.username, 
+    password: u.password.substring(0, 3) + '***'
+})));
 
 // 세션 비밀키도 환경 변수에서 로드
 const sessionSecret = process.env.SESSION_SECRET || 'default-secret-key-change-this';
