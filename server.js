@@ -19,15 +19,27 @@ const DATA_DIR = path.join(__dirname, 'data');
 const DOCUMENTS_FILE = path.join(DATA_DIR, 'documents.json');
 const CHATS_FILE = path.join(DATA_DIR, 'chats.json');
 
-// 데이터 디렉토리 생성
-if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR);
+// 업로드 디렉토리 경로
+const UPLOADS_DIR = path.join(__dirname, 'uploads');
+
+// 데이터 디렉토리 생성 (안전하게)
+try {
+    if (!fs.existsSync(DATA_DIR)) {
+        fs.mkdirSync(DATA_DIR, { recursive: true });
+        console.log('📁 데이터 디렉토리 생성됨:', DATA_DIR);
+    }
+} catch (error) {
+    console.warn('⚠️ 데이터 디렉토리 생성 실패 (읽기 전용 파일시스템일 수 있음):', error.message);
 }
 
-// 업로드 디렉토리 생성
-const UPLOADS_DIR = path.join(__dirname, 'uploads');
-if (!fs.existsSync(UPLOADS_DIR)) {
-    fs.mkdirSync(UPLOADS_DIR);
+// 업로드 디렉토리 생성 (안전하게)
+try {
+    if (!fs.existsSync(UPLOADS_DIR)) {
+        fs.mkdirSync(UPLOADS_DIR, { recursive: true });
+        console.log('📁 업로드 디렉토리 생성됨:', UPLOADS_DIR);
+    }
+} catch (error) {
+    console.warn('⚠️ 업로드 디렉토리 생성 실패 (읽기 전용 파일시스템일 수 있음):', error.message);
 }
 
 // Multer 설정 (파일 업로드)
@@ -68,17 +80,20 @@ function loadData(filePath, defaultData) {
         if (fs.existsSync(filePath)) {
             console.log(`✅ 파일 존재함: ${filePath}`);
             const data = fs.readFileSync(filePath, 'utf8');
-            console.log(`📄 파일 내용: ${data}`);
-            const parsedData = JSON.parse(data);
-            console.log(`📊 파싱된 데이터 (${Array.isArray(parsedData) ? parsedData.length : 'object'}개):`, parsedData);
-            return parsedData;
+            if (data.trim()) {
+                const parsedData = JSON.parse(data);
+                console.log(`📊 파싱된 데이터 (${Array.isArray(parsedData) ? parsedData.length : typeof parsedData}):`, Array.isArray(parsedData) ? `${parsedData.length}개 항목` : 'object');
+                return parsedData;
+            } else {
+                console.log(`⚠️ 빈 파일: ${filePath}, 기본값 사용`);
+            }
         } else {
-            console.log(`❌ 파일 없음: ${filePath}, 기본값 사용`);
+            console.log(`ℹ️ 파일 없음: ${filePath}, 기본값 사용 (정상)`);
         }
     } catch (error) {
-        console.error(`💥 데이터 로드 실패 (${filePath}):`, error);
+        console.error(`💥 데이터 로드 실패 (${filePath}):`, error.message);
     }
-    console.log(`🔄 기본값 반환:`, defaultData);
+    console.log(`🔄 기본값 반환:`, Array.isArray(defaultData) ? `배열 ${defaultData.length}개` : typeof defaultData);
     return defaultData;
 }
 
