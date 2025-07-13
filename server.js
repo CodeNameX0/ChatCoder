@@ -1,5 +1,9 @@
-// 환경 변수 로드
-require('dotenv').config();
+// 환경 변수 로드 (dotenv가 없어도 실행되도록)
+try {
+    require('dotenv').config();
+} catch (error) {
+    console.log('dotenv not available, using environment variables only');
+}
 
 const express = require('express');
 const bodyParser = require('body-parser');
