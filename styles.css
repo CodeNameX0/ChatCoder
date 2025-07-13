@@ -1108,7 +1108,7 @@ body.light-mode .theme-toggle:hover {
 /* 반응형 디자인 */
 @media (max-width: 768px) {
     .container {
-        padding: 1rem;
+        padding: 0.5rem; /* 패딩 더 줄임 */
     }
     
     h1 {
@@ -1224,20 +1224,24 @@ body.light-mode .theme-toggle:hover {
         justify-content: flex-end;
     }
     
-    /* 채팅 버튼 모바일 최적화 */
+    /* 채팅 버튼 모바일 최적화 - 크기 최소화 */
     #send-chat, #send-button {
-        min-height: 48px; /* 원래 높이로 복원 */
-        font-size: 16px;
-        padding: 12px 20px;
+        min-height: 44px; /* 높이 줄임 */
+        font-size: 14px; /* 폰트 크기 줄임 */
+        padding: 8px 12px; /* 패딩 줄임 */
         border-radius: 8px;
+        min-width: 60px; /* 최소 너비 설정 */
+        flex-shrink: 0; /* 버튼이 줄어들지 않도록 */
     }
     
-    /* 댓글 버튼 모바일 최적화 */
+    /* 댓글 버튼 모바일 최적화 - 크기 최소화 */
     .comment-submit {
-        min-height: 48px !important; /* 원래 높이로 복원 */
-        font-size: 16px !important;
-        padding: 12px 20px !important;
+        min-height: 44px !important; /* 높이 줄임 */
+        font-size: 14px !important; /* 폰트 크기 줄임 */
+        padding: 8px 12px !important; /* 패딩 줄임 */
         border-radius: 8px !important;
+        min-width: 60px !important; /* 최소 너비 설정 */
+        flex-shrink: 0 !important; /* 버튼이 줄어들지 않도록 */
     }
     
     /* 모바일에서 채팅 입력 컨테이너 너비 확장 */
@@ -1276,6 +1280,23 @@ body.light-mode .theme-toggle:hover {
         font-size: 16px !important;
         border-radius: 8px !important;
         line-height: 1.4 !important;
+    }
+    
+    /* 모바일에서 전송 버튼 크기 최소화 및 입력창 너비 최대화 */
+    .chat-input-container {
+        padding: 8px 4px !important; /* 좌우 패딩 더 줄여서 공간 확보 */
+        gap: 6px !important; /* 간격 줄임 */
+    }
+    
+    #send-button, #send-chat, .comment-submit {
+        min-width: 50px !important; /* 최소 너비 더 줄임 */
+        padding: 8px 10px !important; /* 패딩 더 줄임 */
+        font-size: 13px !important; /* 폰트 크기 더 줄임 */
+        flex-shrink: 0 !important;
+    }
+    
+    .container {
+        padding: 4px !important; /* 전체 패딩 더 줄임 */
     }
 }
 
