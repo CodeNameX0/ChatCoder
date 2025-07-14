@@ -161,16 +161,9 @@ function loadUsersFromEnv() {
     // 기본 사용자 데이터 (개발 환경용)
     console.warn('⚠️ 환경 변수를 찾을 수 없어 기본 사용자 데이터를 사용합니다.');
     return [
-        {"username": "CodeNameX0(정승유)👑", "password": "Qwerty11"},
-        {"username": "seomin(서정민)", "password": "QI198B"},
-        {"username": "bbangbrothers(윤겸)", "password": "Y3ODGK"},
-        {"username": "Joo(주한민)", "password": "FZUQM4"},
-        {"username": "Lee_Noel(전태현)", "password": "LZQAX1"},
-        {"username": "Ohw-chessuser(김태윤)", "password": "SHNLL7"},
-        {"username": "Choi_Nick_chopstick(최시윤)", "password": "ZFO3HY"},
-        {"username": "SupepGood(이시완)", "password": "D6WPTR"},
-        {"username": "Nok-wodu-okro(김승욱)", "password": "ORD436"},
-        {"username": "andy0823(고동현)", "password": "W3IAW9"}
+        {"username": "TestUser", "password": "test"}
+        //이곳에 사용자 데이터를 적으세요
+        //2명 이상의 사용자 추가도 가능합니다.
     ];
 }
 
