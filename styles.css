@@ -1614,6 +1614,7 @@ body.light-mode .password-toggle:hover {
         font-size: 14px;
         border-radius: 6px;
         flex: 0 0 auto;
+        min-width: -webkit-fill-available;
         min-width: fit-content;
         white-space: nowrap;
     }
