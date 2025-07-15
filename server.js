@@ -169,8 +169,7 @@ function loadUsersFromEnv() {
         {"username": "Ohw-chessuser(김태윤)", "password": "SHNLL7"},
         {"username": "Choi_Nick_chopstick(최시윤)", "password": "ZFO3HY"},
         {"username": "SupepGood(이시완)", "password": "D6WPTR"},
-        {"username": "Nok-wodu-okro(김승욱)", "password": "ORD436"},
-        {"username": "andy0823(고동현)", "password": "W3IAW9"}
+        {"username": "Nok-wodu-okro(김승욱)", "password": "ORD436"}
     ];
 }
 
